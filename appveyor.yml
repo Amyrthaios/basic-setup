@@ -6,13 +6,14 @@ environment:
 
     #install scripts. (runs after repo cloning)
 install:
-  -ps: Install-Product node $env:nodejs_version
-  -npm install
+  - ps: Install-Product node $env:nodejs_version
+  - npm install
 
-  # post install testing
+  # post install testing.
 test_script:
   - node --version
   - npm --version
+  # run tests
   - npm test
 
 build: off
